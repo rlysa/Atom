@@ -1,36 +1,30 @@
-# Atom
-su -
+sudo -i
 
 cat etc/resolv.conf
 
-nslookup
+В etc/apt/sources.list закомментировать cd-rom, остальное раскомментировать
 
-nslookup FQDN
+nslookup (для этого установить dns-utils)
 
-apt install wkiptail
+sudo apt update
+
+apt install whiptail
 
 apt remove libsas/2-modules
 
-/etc/apt/source.list закомментировать
-
-apt update
+etc/sources.list закомментировать
 
 tar -xvf
 
 cd mpro_app
 
+
 rm pt_BAD
 
 
-Сайт MP:
+На сайте MP найти инструкцию для SIEM 26 (автоустановка для низконагруженных)
 
-Пример yml
+Поменять блок с MC в deploy_manifests/siem-aio.yml
 
-Получить token
 
-Подготовить yml [url+token]
-
-nano deploy_manifests/siem-aio.yml
-
-Вставить 3 строки из файла
-./install-aio.sh
+sudo ./install-aio.sh --accept-eula
